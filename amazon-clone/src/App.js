@@ -17,6 +17,17 @@ import SignedInAction from "./Actions/SignedInAction";
 import CheckoutSuccess from "./Components/CheckoutSuccess";
 import NotFound from "./Components/NotFound";
 import SignUp from "./Components/SignUp";
+import { useState } from "react";
+import MessageContainer from "./Components/messagecontainer/messageContainer"
+import Button from '@mui/material/Button';
+import { styled } from '@mui/material/styles';
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogActions from '@mui/material/DialogActions';
+import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
+import { CloseOutlined } from "@material-ui/icons";
 
 const cartFromLocalStorage = JSON.parse(
   localStorage.getItem("cart") || '{"items":[],"count":0}'
@@ -25,10 +36,29 @@ const signedInFromLocalStorage = JSON.parse(
   localStorage.getItem("signedIn") || "false"
 );
 
+const BootstrapDialog = styled(Dialog)(({ theme }) => ({
+  '& .MuiDialogContent-root': {
+    padding: theme.spacing(2),
+  },
+  '& .MuiDialogActions-root': {
+    padding: theme.spacing(1),
+  },
+}));
+
+
 function App() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
   const signedIn = useSelector((state) => state.signedIn);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClickOpen = () => {
+    setShow(true);
+  };
+  const handleClose = () => {
+    setShow(false);
+  }
 
   useEffect(() => {
     const apiCall = async () => {
@@ -86,6 +116,9 @@ function App() {
     });
   }, [dispatch, signedIn]);
 
+  const [show, setShow] = useState(false);
+
+
   return (
     <div>
       <Router>
@@ -94,9 +127,35 @@ function App() {
             path="/"
             element={
               <>
-                <NavBar />
-                <Home />
-                <Footer />
+                <NavBar chatShow={show} chatShowfunc={setShow} />
+                {console.log(show)}
+                <BootstrapDialog
+        onClose={handleClose}
+        aria-labelledby="customized-dialog-title"
+        open={show}
+        sx={{height:"650px", width:"700px", position:"absolute", top:"30%", left:"25%"}}
+      >
+        <DialogTitle sx={{ m: 0, p: 2, color: "grey"}} id="customized-dialog-title">
+          SmartShop Alexa
+        </DialogTitle>
+        <IconButton
+          aria-label="close"
+          onClick={handleClose}
+          sx={{
+            position: 'absolute',
+            right: 8,
+            top: 8,
+            color: "grey"
+          }}
+        >
+          <CloseOutlined />
+        </IconButton>
+        <DialogContent dividers>
+          <MessageContainer />
+        </DialogContent>
+      </BootstrapDialog>
+              <Home />
+              <Footer />
               </>
             }
           />
@@ -113,8 +172,9 @@ function App() {
             exact
             element={
               <>
-                <NavBar />
-                <Home />
+                <NavBar props={[show, setShow]}/>
+                {console.log(show)}
+                {show ? <MessageContainer /> : <Home />}
                 <Footer />
               </>
             }
