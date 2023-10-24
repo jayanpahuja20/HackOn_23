@@ -129,7 +129,8 @@ const MessageContainer = () =>{
 
   const finalClickHandler = async () => {
       if (!isTyping) {
-          const finalMessage = "Give me the final list of items from the last message in the following format: [item1, item2, item3]. Don't include any other text like any further help or here is your list";
+        const finalMessage = `Give me the final list of items from the last message in the following format: [item1, item2, item3]. 
+        Don't include any other text like any further help or here is your list. Only return the list in teh required format.`;
           
           const newMessage = {
               message: finalMessage,
