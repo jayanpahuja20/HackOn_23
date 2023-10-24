@@ -5,6 +5,8 @@ import { makeStyles } from "@material-ui/styles";
 import amazonBanner from "../Assets/images/amazonBanner.jpg";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import MessageContainer from "./messagecontainer/messageContainer" 
+
 const useStyles = makeStyles({
   banner: {
     backgroundImage: `url(${amazonBanner})`,

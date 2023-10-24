@@ -10,6 +10,7 @@ import { AiOutlineCaretDown } from "react-icons/ai";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 import { useDispatch, useSelector } from "react-redux";
 import setUserAction from "../Actions/setUserAction";
+import { useState } from "react";
 import {
   Dialog,
   DialogActions,
@@ -17,6 +18,7 @@ import {
   DialogTitle,
 } from "@mui/material";
 import SignedInAction from "../Actions/SignedInAction";
+import MessageContainer from "./messagecontainer/messageContainer"
 
 const useStyles = makeStyles({
   appbar: {
@@ -142,9 +144,11 @@ const useStyles = makeStyles({
     textDecoration: "none",
     color: "white",
   },
+  messageContainer: {
+  },
 });
 
-function NavBar() {
+function NavBar(props) {
   const classes = useStyles();
   const initialUserState = {
     uid: "",
@@ -183,6 +187,7 @@ function NavBar() {
       setOpen(true);
     }, 300);
   };
+
   const [open, setOpen] = React.useState(false);
 
   const handleClose = () => {
@@ -227,8 +232,8 @@ function NavBar() {
           </div>
           <div className={classes.search}>
             <input type="text" className={classes.searchbar}></input>
-            <Button className={classes.searchBtn}>
-              <Search className={classes.searchIcon} />
+            <Button className={classes.searchBtn} onClick={() => props.chatShowfunc(!props.chatShow)}>
+              <Search className={classes.searchIcon} onClick={() => props.chatShowfunc(!props.chatShow)} />
             </Button>
           </div>
           <div className={classes.headerButton}>
