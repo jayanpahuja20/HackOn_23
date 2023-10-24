@@ -231,7 +231,7 @@ function NavBar(props) {
             </div>
           </div>
           <div className={classes.search}>
-            <input type="text" className={classes.searchbar}></input>
+            <input type="text" placeholder="Amazon Search (Powered by AI)" className={classes.searchbar}></input>
             <Button className={classes.searchBtn} onClick={() => props.chatShowfunc(!props.chatShow)}>
               <Search className={classes.searchIcon} onClick={() => props.chatShowfunc(!props.chatShow)} />
             </Button>

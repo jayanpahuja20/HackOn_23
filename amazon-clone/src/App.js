@@ -39,6 +39,9 @@ const signedInFromLocalStorage = JSON.parse(
 const BootstrapDialog = styled(Dialog)(({ theme }) => ({
   '& .MuiDialogContent-root': {
     padding: theme.spacing(2),
+    maxWidth: "lg",
+    maxHeight: "lg",
+    backgroundColor: "#f5f5f5",
   },
   '& .MuiDialogActions-root': {
     padding: theme.spacing(1),
@@ -133,7 +136,7 @@ function App() {
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={show}
-        sx={{height:"650px", width:"700px", position:"absolute", top:"30%", left:"25%"}}
+        sx={{height:"650px", width:"750px", position:"absolute", top:"25%", left:"25%"}}
       >
         <DialogTitle sx={{ m: 0, p: 2, color: "grey"}} id="customized-dialog-title">
           SmartShop Alexa
