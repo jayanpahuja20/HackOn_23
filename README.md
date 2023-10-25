@@ -2,7 +2,7 @@
 Team Odyssey's Amazon HackOn'23 Submission
 ***
 # Have a look!
-👨‍💻 [Link to our Deployed Website](https://d2tqmmy77bspof.cloudfront.net/) | 📊 [Link to our Presentation]() | 🎥 [Demo Video of our Prototype]()
+👨‍💻 [Link to our Deployed Website](http://my-aws-bucket-odyssey.s3-website.ap-south-1.amazonaws.com/) | 📊 [Link to our Presentation]() | 🎥 [Demo Video of our Prototype]()
 ***
 # Introduction
 * Welcome to the **Goal-based Product Recommender and Checklist Provider via GenAI** ! 
