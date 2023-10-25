@@ -2,7 +2,7 @@
 Team Odyssey's Amazon HackOn'23 Submission
 ***
 # Have a look!
-👨‍💻 [Link to our Deployed Website](http://my-aws-bucket-odyssey.s3-website.ap-south-1.amazonaws.com/) | 📊 [Link to our Presentation]() | 🎥 [Demo Video of our Prototype]()
+👨‍💻 [Link to our Deployed Website](http://my-aws-bucket-odyssey.s3-website.ap-south-1.amazonaws.com/) | 📊 [Link to our Presentation](https://drive.google.com/file/d/1jUtZHEMSu2dRhEsAB5QbhNaMXW_PKSC1/view?usp=sharing) | 🎥 [Demo Video of our Prototype](https://www.youtube.com/watch?v=NCVNktowyQI)
 ***
 # Introduction
 * Welcome to the **Goal-based Product Recommender and Checklist Provider via GenAI** ! 
@@ -16,5 +16,13 @@ Team Odyssey's Amazon HackOn'23 Submission
 * Seamlessly add multiple items to your cart in one click, overcoming Amazon's existing constraints. Plus, never lose track of past lists; they're stored securely for easy access anytime. Dive into an evolved shopping era where global collaboration meets individual personalization and unparalleled convenience.
 * ```SmartShop Alexa: Redefining shopping simplicity.```
 ***
-# Our Approach & Methodology
-![image](https://github.com/jayanpahuja20/HackOn_23/blob/main/GitHub-Assets/idea-flow.png)
+# Set-up Locally
+1. Set-up your local environment and install Node(v18.18.2) and MongoDB Community server. 
+3. Clone our repository
+`git clone https://github.com/jayanpahuja20/HackOn_23`
+4. Open the repository in your IDE and run the following commands.
+  - ```
+    cd amazon-hackon-app
+    npm  i (If gives a conflict, try npm i -force)
+    npm run start 
+
