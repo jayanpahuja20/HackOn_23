@@ -15,7 +15,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 
 
-const API_KEY = "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";
+const API_KEY = "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";
 
 const systemMessage = { //  Explain things like you're talking to a software professional with 5 years of experience.
   "role": "system", "content": ` 
