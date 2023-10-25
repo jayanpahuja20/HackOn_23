@@ -21,7 +21,8 @@ Team Odyssey's Amazon HackOn'23 Submission
 3. Clone our repository
 `git clone https://github.com/jayanpahuja20/HackOn_23`
 4. Open the repository in your IDE and run the following commands.
-  - ```
+```
     cd amazon-hackon-app
     npm  i (If gives a conflict, try npm i -force)
     npm run start 
+```
