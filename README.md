@@ -25,4 +25,3 @@ Team Odyssey's Amazon HackOn'23 Submission
     cd amazon-hackon-app
     npm  i (If gives a conflict, try npm i -force)
     npm run start 
-
