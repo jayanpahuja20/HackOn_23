@@ -15,3 +15,6 @@ Team Odyssey's Amazon HackOn'23 Submission
 * To revolutionize the shopping experience, SmartShop Alexa introduces a global yet customizable checklist system powered by chatGPT. Go beyond traditional list-making by connecting with like-minded shoppers worldwide, while retaining the freedom to personalize to your unique preferences.
 * Seamlessly add multiple items to your cart in one click, overcoming Amazon's existing constraints. Plus, never lose track of past lists; they're stored securely for easy access anytime. Dive into an evolved shopping era where global collaboration meets individual personalization and unparalleled convenience.
 * ```SmartShop Alexa: Redefining shopping simplicity.```
+***
+# Our Approach & Methodology
+![image](https://github.com/jayanpahuja20/HackOn_23/blob/main/GitHub-Assets/idea-flow.png)
