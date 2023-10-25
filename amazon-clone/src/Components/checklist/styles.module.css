@@ -1,8 +1,10 @@
 .mainBg{
     background-color:rgba(35, 47, 62, 0.99) ;
 
-    height: 100vh;
+    height: 100%;
     padding: 20px;
+    padding-top: 100px !important;
+
 }
 .itemBox{
     background-color: white;

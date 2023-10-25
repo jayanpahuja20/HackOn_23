@@ -12,7 +12,7 @@ import {
 
 } from "@chatscope/chat-ui-kit-react";
 import { useState } from 'react';
-
+import { Link } from "react-router-dom";
 
 
 const API_KEY = "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";
@@ -44,6 +44,8 @@ const systemMessage = { //  Explain things like you're talking to a software pro
       Note that if the scenario seems to showcase that user might need a streamming service, you can recommend Amazon Prime Video and if user might need music streamming recommend amazon services like Amazon Prime Music in case required.
       Don't include explannaions in the checklist. Just the list of items.
       Don't include multiple items in one line. Each item should be in a separate line.
+      Only include items which you can buy on Amazon.
+      You must strictly follow these conditions.
   `
 }
 
@@ -142,8 +144,9 @@ const MessageContainer = () =>{
 
           // Process the message and print the response in the console
           const response = await getfinallist(newMessages);
-          console.log(response);
-      }
+          window.open(`http://localhost:3000/checklist?items=${response}`)
+        }
+
   };
 
   async function getfinallist(chatMessages) {
@@ -181,7 +184,7 @@ const MessageContainer = () =>{
       }).then((data) => {
           return data.json();
       }).then((data) => {
-          responseData = data;
+          responseData = data.choices[0].message.content;
           setInputActive(false);
           setIsTyping(false);
       });

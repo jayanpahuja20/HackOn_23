@@ -4,8 +4,14 @@ import Container from '@mui/material/Container';
 import { TextField } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
 import { useState } from 'react';
-const CheckListPage = (props) =>{
-    const itemList = props.data 
+import { useLocation, useSearchParams } from 'react-router-dom';
+const CheckListPage = () => {
+    const params = useLocation()
+    const searchParams = new URLSearchParams(params.search)
+    const items = decodeURIComponent(searchParams.get('items'))
+    let itemList = items.split(',')
+    itemList[0] = itemList[0].slice(1)
+    itemList[itemList.length-1] = itemList[itemList.length-1].slice(0,-1)
     
     const ItemRow = (props) =>{
       const [checked , setCheck] = useState(false)

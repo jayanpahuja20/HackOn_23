@@ -28,6 +28,7 @@ import DialogActions from '@mui/material/DialogActions';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { CloseOutlined } from "@material-ui/icons";
+import CheckListPage from "./Components/checklist/CheckListPage"
 
 const cartFromLocalStorage = JSON.parse(
   localStorage.getItem("cart") || '{"items":[],"count":0}'
@@ -240,6 +241,16 @@ function App() {
             element={
               <>
                 <NotFound />
+              </>
+            }
+          />
+          <Route
+            path="/CheckList"
+            element={
+              <>
+                <NavBar />
+                <CheckListPage />
+                <Footer />
               </>
             }
           />
